@@ -1,0 +1,50 @@
+2024-07-04 18:16:33.681 BST [87787] LOG:  starting PostgreSQL 14.12 (Homebrew) on aarch64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-07-04 18:16:33.687 BST [87787] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-07-04 18:16:33.687 BST [87787] LOG:  listening on IPv6 address "::1", port 5432
+2024-07-04 18:16:33.688 BST [87787] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-07-04 18:16:33.726 BST [87788] LOG:  database system was shut down at 2024-07-04 18:14:58 BST
+2024-07-04 18:16:33.749 BST [87787] LOG:  database system is ready to accept connections
+2024-07-04 18:16:56.744 BST [87815] FATAL:  role "core" does not exist
+2024-07-04 18:17:32.569 BST [87841] FATAL:  role "postgres" does not exist
+2024-07-04 18:17:39.878 BST [87843] FATAL:  role "postgres@14" does not exist
+2024-07-04 18:18:16.353 BST [87847] FATAL:  lock file "postmaster.pid" already exists
+2024-07-04 18:18:16.353 BST [87847] HINT:  Is another postmaster (PID 87787) running in data directory "/opt/homebrew/var/postgresql@14"?
+2024-07-04 18:18:35.009 BST [87850] FATAL:  role "postgres" does not exist
+2024-07-04 18:18:38.611 BST [87852] FATAL:  role "postgres@14" does not exist
+2024-07-04 18:18:48.389 BST [87787] LOG:  received fast shutdown request
+2024-07-04 18:18:48.390 BST [87787] LOG:  aborting any active transactions
+2024-07-04 18:18:48.392 BST [87787] LOG:  background worker "logical replication launcher" (PID 87794) exited with exit code 1
+2024-07-04 18:18:48.393 BST [87789] LOG:  shutting down
+2024-07-04 18:18:48.399 BST [87787] LOG:  database system is shut down
+2024-07-04 19:41:04.035 BST [88174] LOG:  starting PostgreSQL 14.12 (Homebrew) on aarch64-apple-darwin22.6.0, compiled by Apple clang version 15.0.0 (clang-1500.1.0.2.5), 64-bit
+2024-07-04 19:41:04.037 BST [88174] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-07-04 19:41:04.037 BST [88174] LOG:  listening on IPv6 address "::1", port 5432
+2024-07-04 19:41:04.038 BST [88174] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-07-04 19:41:04.040 BST [88175] LOG:  database system was shut down at 2024-07-04 19:40:19 BST
+2024-07-04 19:41:04.043 BST [88174] LOG:  database system is ready to accept connections
+2024-07-04 19:41:08.968 BST [88183] FATAL:  role "postgres" does not exist
+2024-07-04 19:41:32.498 BST [88187] FATAL:  lock file "postmaster.pid" already exists
+2024-07-04 19:41:32.498 BST [88187] HINT:  Is another postmaster (PID 88174) running in data directory "/opt/homebrew/var/postgresql@14"?
+2024-07-04 19:41:46.292 BST [88190] FATAL:  database "ilyaputintsev" does not exist
+2024-07-04 19:45:46.972 BST [88260] ERROR:  null value in column "author_id" of relation "core_post" violates not-null constraint
+2024-07-04 19:45:46.972 BST [88260] DETAIL:  Failing row contains (1, 2b7908a1-85fa-459a-8ed0-e28b1c32c60d, 2024-07-04 18:45:46.96831+00, 2024-07-04 18:45:46.970502+00, A simple test, f, null).
+2024-07-04 19:45:46.972 BST [88260] STATEMENT:  INSERT INTO "core_post" ("public_id", "created", "updated", "author_id", "body", "edited") VALUES ('2b7908a1-85fa-459a-8ed0-e28b1c32c60d'::uuid, '2024-07-04T18:45:46.968310+00:00'::timestamptz, '2024-07-04T18:45:46.970502+00:00'::timestamptz, NULL, 'A simple test', false) RETURNING "core_post"."id"
+2024-07-04 19:52:21.701 BST [88389] ERROR:  null value in column "author_id" of relation "core_post_post" violates not-null constraint
+2024-07-04 19:52:21.701 BST [88389] DETAIL:  Failing row contains (2, ddc03021-139d-429e-8f4b-b9bcb99f3b24, 2024-07-04 18:52:21.694647+00, 2024-07-04 18:52:21.697621+00, A simple test, f, null).
+2024-07-04 19:52:21.701 BST [88389] STATEMENT:  INSERT INTO "core_post_post" ("public_id", "created", "updated", "author_id", "body", "edited") VALUES ('ddc03021-139d-429e-8f4b-b9bcb99f3b24'::uuid, '2024-07-04T18:52:21.694647+00:00'::timestamptz, '2024-07-04T18:52:21.697621+00:00'::timestamptz, NULL, 'A simple test', false) RETURNING "core_post_post"."id"
+2024-07-04 20:12:32.604 BST [88952] ERROR:  null value in column "author_id" of relation "core_post_post" violates not-null constraint
+2024-07-04 20:12:32.604 BST [88952] DETAIL:  Failing row contains (3, f7aa03e0-b3b1-4cdb-a142-4c4eb01a6984, 2024-07-04 19:12:32.597183+00, 2024-07-04 19:12:32.598093+00, A simple test, f, null).
+2024-07-04 20:12:32.604 BST [88952] STATEMENT:  INSERT INTO "core_post_post" ("public_id", "created", "updated", "author_id", "body", "edited") VALUES ('f7aa03e0-b3b1-4cdb-a142-4c4eb01a6984'::uuid, '2024-07-04T19:12:32.597183+00:00'::timestamptz, '2024-07-04T19:12:32.598093+00:00'::timestamptz, NULL, 'A simple test', false) RETURNING "core_post_post"."id"
+2024-07-04 20:16:24.611 BST [88987] ERROR:  role "postgres" already exists
+2024-07-04 20:16:24.611 BST [88987] STATEMENT:  CREATE ROLE postgres WITH SUPERUSER LOGIN PASSWORD 'admin1';
+2024-07-04 20:16:38.888 BST [88987] ERROR:  role "core" already exists
+2024-07-04 20:16:38.888 BST [88987] STATEMENT:  CREATE ROLE core WITH SUPERUSER LOGIN PASSWORD 'wCh29&HE&T83';
+2024-07-04 20:16:45.720 BST [88987] ERROR:  database "coredb" already exists
+2024-07-04 20:16:45.720 BST [88987] STATEMENT:  CREATE DATABASE coredb OWNER core;
+2024-07-05 21:19:24.520 BST [97912] FATAL:  lock file "postmaster.pid" already exists
+2024-07-05 21:19:24.520 BST [97912] HINT:  Is another postmaster (PID 88174) running in data directory "/opt/homebrew/var/postgresql@14"?
+2024-07-05 21:20:00.478 BST [88174] LOG:  received fast shutdown request
+2024-07-05 21:20:00.490 BST [88174] LOG:  aborting any active transactions
+2024-07-05 21:20:00.542 BST [88174] LOG:  background worker "logical replication launcher" (PID 88181) exited with exit code 1
+2024-07-05 21:20:00.556 BST [88176] LOG:  shutting down
+2024-07-05 21:20:00.727 BST [88174] LOG:  database system is shut down
